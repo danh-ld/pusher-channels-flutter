@@ -90,7 +90,7 @@ class PusherChannelsFlutter {
     _instance = null;
     PusherChannelsFlutter().channels = {};
     PusherChannelsFlutter().methodChannel = const MethodChannel('pusher_channels_flutter');
-    PusherChannelsFlutter().methodChannel.setMethodCallHandler((call) => null)
+    PusherChannelsFlutter().methodChannel.setMethodCallHandler((call) => null);
   }
 
   Future<void> init({
