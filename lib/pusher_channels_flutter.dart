@@ -88,6 +88,7 @@ class PusherChannelsFlutter {
   
   static void dispose() {
     _instance = null;
+    methodChannel.setMethodCallHandler((call) => null);
   }
 
   Future<void> init({
