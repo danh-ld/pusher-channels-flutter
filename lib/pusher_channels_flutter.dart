@@ -88,13 +88,10 @@ class PusherChannelsFlutter {
   
   static void dispose() async {
     _instance = null;
-    await PusherChannelsFlutter().disconnect();
-    PusherChannelsFlutter().channels = {};
     PusherChannelsFlutter().methodChannel =
         const MethodChannel('pusher_channels_flutter');
-    PusherChannelsFlutter().methodChannel.setMethodCallHandler((call) async {
-      return Future.value(null);
-    });
+    PusherChannelsFlutter().channels = {};
+    PusherChannelsFlutter().connectionState = 'DISCONNECTED';
   }
 
   Future<void> init({
