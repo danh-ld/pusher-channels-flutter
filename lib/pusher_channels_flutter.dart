@@ -88,9 +88,8 @@ class PusherChannelsFlutter {
   
   static void dispose() {
     _instance = null;
-    channels.clear();
-    methodChannel = MethodChannel();
-    methodChannel = const MethodChannel('pusher_channels_flutter');
+    this.channels = {};
+    this.methodChannel = const MethodChannel('pusher_channels_flutter');
   }
 
   Future<void> init({
