@@ -86,10 +86,12 @@ class PusherChannelsFlutter {
     return _instance!;
   }
   
-  static void dispose() {
+  static void dispose() async {
     _instance = null;
+    await PusherChannelsFlutter().disconnect();
     PusherChannelsFlutter().channels = {};
-    PusherChannelsFlutter().methodChannel = const MethodChannel('pusher_channels_flutter');
+    PusherChannelsFlutter().methodChannel =
+        const MethodChannel('pusher_channels_flutter');
     PusherChannelsFlutter().methodChannel.setMethodCallHandler((call) async {
       return Future.value(null);
     });
