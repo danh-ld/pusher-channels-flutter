@@ -85,6 +85,10 @@ class PusherChannelsFlutter {
     _instance ??= PusherChannelsFlutter();
     return _instance!;
   }
+  
+  static void dispose() {
+    _instance = null;
+  }
 
   Future<void> init({
     required String apiKey,
