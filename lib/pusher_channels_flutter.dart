@@ -90,7 +90,6 @@ class PusherChannelsFlutter {
     _instance = null;
     PusherChannelsFlutter().methodChannel = const MethodChannel('pusher_channels_flutter');
     PusherChannelsFlutter().channels = {};
-    PusherChannelsFlutter().connectionState = 'DISCONNECTED';
   }
 
   Future<void> init({
